@@ -128,6 +128,11 @@ class GradeController extends Controller
         return view('grades.addGradesForClass', compact('students', 'course', 'classroom'));
     }
 
+    public function saveClassroomGrades(Request $request)
+    {
+        dd($request);
+    }
+
     // public function getGradesEntryByClassroom($classroom, $course_id)
     // {
     //     $students = Student::where('classroom', $classroom)->orderBy('academic_id')->get();

@@ -8,7 +8,7 @@ class Student extends Model
 {
     public function grades()
     {
-    	return $this->hasMany('App\Grade');
+    	return $this->hasOne('App\Grade');
     }
 
     public function courses()

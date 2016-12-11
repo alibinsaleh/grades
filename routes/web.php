@@ -44,6 +44,12 @@ Route::get('/gradesbyclassroom/{classroom}/{course_id}', [
 	'middleware' => 'auth'
 ]);
 
+Route::post('/saveclassroomgrades', [
+	'uses' => 'GradeController@saveClassroomGrades',
+	'as' => 'saveclassroomgrades',
+	'middleware' => 'auth'
+]);
+
 
 
 Route::get('/grades_entry/{student_id}/{course_id}', [
