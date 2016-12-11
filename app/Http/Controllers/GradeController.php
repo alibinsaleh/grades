@@ -130,7 +130,32 @@ class GradeController extends Controller
 
     public function saveClassroomGrades(Request $request)
     {
-        dd($request);
+        $classroom = $request['classroom'];
+        $students = $students = Student::where('classroom', $classroom)->orderBy('academic_id')->get();
+        
+
+        foreach($students as $student)
+        {
+            $grades = Grade::where('student_id', $student->id)->first();
+
+            if ($grades){
+                $grades->student_id = $student->id;
+                $grades->course_id = $request['course_id'];
+                $grades->final_theory_test = $request['final_theory_test-' . $student->id];
+                $grades->final_practical_test = $request['final_practical_test-' . $student->id];
+                $grades->short_verbal_test = $request['short_verbal_test-' . $student->id];
+                $grades->short_theory_test = $request['short_theory_test-' . $student->id];
+                $grades->projects = $request['projects-' . $student->id];
+                $grades->participationـinteraction = $request['participationـinteraction-' . $student->id];
+                $grades->homework_performance = $request['homework_performance-' . $student->id];
+                $grades->work_file = $request['work_file-' . $student->id];
+                $grades->attendance = $request['attendance-' . $student->id];
+                $grades->update();
+            }
+            
+
+        }
+        return redirect()->back()->with('success', 'تم حفظ الدرجات بنجاح');
     }
 
     // public function getGradesEntryByClassroom($classroom, $course_id)
