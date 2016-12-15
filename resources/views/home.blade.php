@@ -29,6 +29,33 @@
                             </td>
                             <td>اوراق عمل مقررات</td>
                         </tr>
+                        <tr>
+                            <td>
+                                <a href="{{ asset('uploaded_files/unit-5.pdf') }}">
+                                <!-- <a href="{{ url('/donwload-file') }}"> -->
+                                    <img src="{{ asset('img/download.png') }}" size="" alt="" height="42" width="42">
+                                </a>
+                            </td>
+                            <td>حل تمارين أوراق العمل - الوحدة الخامسة</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="{{ asset('uploaded_files/unit-6.pdf') }}">
+                                <!-- <a href="{{ url('/donwload-file') }}"> -->
+                                    <img src="{{ asset('img/download.png') }}" size="" alt="" height="42" width="42">
+                                </a>
+                            </td>
+                            <td>حل تمارين أوراق العمل - الوحدة السادسة</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="{{ asset('uploaded_files/unit-7.pdf') }}">
+                                <!-- <a href="{{ url('/donwload-file') }}"> -->
+                                    <img src="{{ asset('img/download.png') }}" size="" alt="" height="42" width="42">
+                                </a>
+                            </td>
+                            <td>حل تمارين أوراق العمل - الوحدة السابعة</td>
+                        </tr>
                     </table>
                     <br>
                     <br>

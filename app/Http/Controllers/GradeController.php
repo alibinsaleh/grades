@@ -15,11 +15,7 @@ use App\ShortPractical;
 class GradeController extends Controller
 {
 
-    public function testvuejs()
-    {
-        return view('testvuejs');
-    }
-
+    
 
     public function getStudentGrade($student_id, $course_id)
     {
@@ -124,7 +120,7 @@ class GradeController extends Controller
     {
         $students = Student::where('classroom', $classroom)->orderBy('academic_id')->get();
         $course = Course::find($course_id);
-
+       
         return view('grades.addGradesForClass', compact('students', 'course', 'classroom'));
     }
 

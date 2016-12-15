@@ -55,6 +55,21 @@
                         
                         <!-- Authentication Links -->
                         @if (Auth::check())
+                            @if (Auth::user()->user_role == 'admin')
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        تقارير <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="{{ route('reports.dashboard') }}">
+                                                الدرجات النهائية
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
                            
                             <li><a href="{{ url('/home') }}">لوحة التحكم</a></li>
                         @endif

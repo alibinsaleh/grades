@@ -17,12 +17,12 @@ Route::get('/', function () {
 
 
 
-Route::get('/testvuejs', [ 
+// Route::get('/testvuejs', [ 
 
-	'uses' => 'GradeController@testvuejs',
-	'as' => 'test',
+// 	'uses' => 'GradeController@testvuejs',
+// 	'as' => 'test',
 	
-]);
+// ]);
 
 Route::get('/test/{academic_id}/{course_id}', [ 
 
@@ -183,12 +183,21 @@ Route::get('/addparticipation/{student_id}/{course_id}', [
 ]);
 
 
-
-
-Route::get('/admin/register_all', [
-	'uses' => 'RegisterController@register_all',
-	'as' => 'register_all'
+// Reports routes
+Route::get('/reports', [
+	'uses' => 'ReportsController@gerReportsDashboard',
+	'as' => 'reports.dashboard'
 ]);
+
+Route::get('/reports/{classroom}', [
+	'uses' => 'ReportsController@getClassroomFinalGrades',
+	'as' => 'classroom.finals'
+]);
+
+// Route::get('/admin/register_all', [
+// 	'uses' => 'RegisterController@register_all',
+// 	'as' => 'register_all'
+// ]);
 
 
 
